@@ -29,25 +29,25 @@ public class UserController {
         return "users";
     }
 
-    @PostMapping("/users/сreateUser")
+    @PostMapping("/users")
     public String addUser(@ModelAttribute("user") User user) {
         userService.saveUser(user);
         return "users";
     }
 
     @GetMapping("/users/removeUser")
-    public String removeUser(@RequestParam(value = "id", required = false) Long id) {
+    public String removeUser(@RequestParam(value = "id") Long id) {
         userService.deleteById(id);
         return "users";
     }
 
-    @GetMapping("/users/updateUser/edit")
-    public String editUserGet(@RequestParam(value = "id", required = false) Long id, Model model) {
+    @GetMapping("/users/id")
+    public String editUserGet(@RequestParam(value = "id") Long id, Model model) {
         model.addAttribute("user", userService.getUser(id));
         return "users";
     }
 
-    @PostMapping("/users/updateUser")
+    @PostMapping("/users/id")
     public String postEditUserForm(@ModelAttribute("user") User user) {
         userService.updateUser(user);
         return "users";

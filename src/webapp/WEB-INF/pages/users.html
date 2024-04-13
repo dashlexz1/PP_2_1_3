@@ -31,11 +31,11 @@
     </tr>
     </tbody>
 </table>
+<a th:href="'/users/id?id=' + ${user.id}">Изменить</a>
+<a th:href="'/users/removeUser?id=' + ${user.id}">Удалить</a>
 <div class = "container">
-    <a th:href="'/users/updateUser/edit?id=' + ${user.id}">Изменить</a>
-    <a th:href="'/users/removeUser?id=' + ${user.id}">Удалить</a>
     <h2>Добавить пользователя</h2>
-    <form th:method="POST" th:action="@{/users/сreateUser}" th:object="${user}">
+    <form th:method="POST" th:action="@{/users}" th:object="${user}">
         <label for="name">Введите имя:</label>
         <input type="text" th:field="*{name}" id="name"/>
 
@@ -54,7 +54,7 @@
     </div>
 <div class = "container">
     <h2>Изменить пользователя</h2>
-    <form th:method="POST" th:action="@{/users/updateUser}" th:object="${user}">
+    <form th:method="POST" th:action="@{/users/id}" th:object="${user}">
         <input hidden="hidden" type="number" th:field="*{id}" id="idAdd"/>
         <label for="name">Введите имя:</label>
         <input type="text" th:field="*{name}" id="nameUpdate"/>
