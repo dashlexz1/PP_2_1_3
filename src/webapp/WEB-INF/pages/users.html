@@ -55,7 +55,8 @@
 <div class = "container">
     <h2>Изменить пользователя</h2>
     <form th:method="POST" th:action="@{/users/id}" th:object="${user}">
-        <input hidden="hidden" type="number" th:field="*{id}" id="idAdd"/>
+        <input hidden="hidden" type="number" th:field="*{id}" id="idUser"/>
+
         <label for="name">Введите имя:</label>
         <input type="text" th:field="*{name}" id="nameUpdate"/>
 
