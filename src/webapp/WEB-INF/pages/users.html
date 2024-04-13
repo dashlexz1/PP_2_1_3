@@ -31,8 +31,8 @@
     </tr>
     </tbody>
 </table>
-<a th:href="'/users/id?id=' + ${user.id}">Изменить</a>
-<a th:href="'/users/removeUser?id=' + ${user.id}">Удалить</a>
+<a th:href="'/users/id?id=' + ${user.getId()}">Изменить</a>
+<a th:href="'/users/removeUser?id=' + ${user.getId()}">Удалить</a>
 <div class = "container">
     <h2>Добавить пользователя</h2>
     <form th:method="POST" th:action="@{/users}" th:object="${user}">
