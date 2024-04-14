@@ -38,7 +38,7 @@ public class UserController {
     @GetMapping("/users/removeUser")
     public String removeUser(@RequestParam(value = "id") Long id) {
         userService.deleteById(id);
-        return "users";
+        return "redirect:/users";
     }
 
     @GetMapping("/users/id")
@@ -50,7 +50,7 @@ public class UserController {
     @PostMapping("/users/id")
     public String postEditUserForm(@ModelAttribute("user") User user) {
         userService.updateUser(user);
-        return "users";
+        return "redirect:/users";
     }
 }
 
