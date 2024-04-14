@@ -32,13 +32,13 @@ public class UserController {
     @PostMapping("/users")
     public String addUser(@ModelAttribute("user") User user) {
         userService.saveUser(user);
-        return "users";
+        return "redirect:/users";
     }
 
     @GetMapping("/users/removeUser")
     public String removeUser(@RequestParam(value = "id") Long id) {
         userService.deleteById(id);
-        return "redirect:/users";
+        return "users";
     }
 
     @GetMapping("/users/id")
