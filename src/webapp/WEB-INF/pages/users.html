@@ -23,11 +23,11 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="users : ${users}">
-        <td th:text="${users.getId()}"></td>
-        <td th:text="${users.getName()}"></td>
-        <td th:text="${users.getSalary()}"></td>
-        <td th:text="${users.getAge()}"></td>
+    <tr th:each="user : ${user}">
+        <td th:text="${user.getId()}"></td>
+        <td th:text="${user.getName()}"></td>
+        <td th:text="${user.getSalary()}"></td>
+        <td th:text="${user.getAge()}"></td>
     </tr>
     </tbody>
 </table>
